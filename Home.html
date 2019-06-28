@@ -1,0 +1,125 @@
+<!--
+/*
+* Programmer : Dr.-Ing. Bader Juma
+* Date       : June 27, 2019
+* File       : Home.html
+* Purpose    : GUI of Rubik Desing
+*/
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- css style for rubik -->
+<link rel="stylesheet" type="text/css" href="rubicstyle.css">
+
+</head>
+
+<body>
+<br>
+<div class ="rub">
+<h1>Rotation Rubik Faces</h2>
+<!--Enter data--><!-- -->
+<p>Enter matrix dimension that is positive integer:</p>
+<table>
+<tr>
+<td><input id="numb" value="3"></td>
+<td><button class="red"  type="button" onclick="dataVaidateFunction()">Enter</button></td>
+<td><p id = "demo"></p></td>
+</tr>
+<tr>
+<td><p>Display orthographic faces<br> for Rubik object</p></td>
+<td><button  id="btnRun" type="button" onclick="guiFunction()">Display</button></td>
+<td></td>
+</tr>
+</table>
+</div>
+<!-- Create rubic orthographic -->
+<div class="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>  
+  <div class="grid-item"><table id="top"></table></div>    
+  <div class="grid-item"></div>
+  <div class="grid-item"><table id="back"></table></div>
+  <div class="grid-item"><table id="rightside"></table></div>  
+  <div class="grid-item"><table id="front"></table></div>
+  <div class="grid-item"><table id="leftside"></table></div>
+  <div class="grid-item"></div>  
+  <div class="grid-item"></div> 
+  <div class="grid-item"><table id="bottom"></table></div>  
+  <div class="grid-item"></div> 
+</div>
+<div class ="rub">
+<!--initialize six color matrix saver code with zero -->
+<table>
+<tr>
+<td><p>Push button to initialize virtual<br> matrix that store color code for faces</p></td>
+<td><button  type="button" onclick="initializeFunction()">initialization</button></td>
+<td><p id="demo1"></p></td>
+</tr>
+</table>
+ <!-- chooses rotation of axis x,y, x -->
+  <table>
+  <tr>
+  <td><p>Choose axis rotation</p></td>
+  <td>
+    <select id="axisRotation">
+    <option value="x">X</option>
+    <option value="y">Y</option>	
+    <option value="z">Z</option>	
+  </select>
+  </td>
+  </tr>
+   <tr>
+  <td>  <!-- two direction of rotation Clockwise and Anticlockwise-->
+
+  <p>Choose direction of rotation</p>
+  </td>
+  <td><select id="typeRotation">
+    <option value="cw">Clockwise</option>
+    <option value="anticw">AntiClockwise</option>
+    </select></td>
+  </tr>
+  <tr>
+  <td>
+  <!--3 maximum step rotation around one axis that make any 
+  cell reach the required faces -->
+  <p>Choose step of rotation</p>
+  </td>
+  <td>
+  <select id="stepRotation">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  </select>
+  </td>
+  </tr>
+  <tr>
+  <td><p>Choose position of cell to<br> be rotate</p></td>
+  <td><select id="cellRotation"></select></td>
+  <td><button  type="button" onclick="rotationFunction()">Rotate</button> </td>
+  </tr> 
+  </table>
+  </select>
+ 
+ 
+ <table>
+<tr>
+
+<td><p>Push button to scramble faces</p></td>
+<td><input id="numScramble" value="10"></td>
+<td><button  type="button" onclick="scrambleFunction()">scramble</button></td>
+</tr>
+</table>
+       
+  
+</div>
+
+<!--Call javaScript code for create rubic orthographic -->
+<script src="mainFunctionScript.js"></script>
+<script src="branchFunctionScript.js"></script>
+
+</body>
+</html>
