@@ -87,6 +87,69 @@ function initializeMatrixFunction(backArr, rightsideArr, frontArr, leftsideArr, 
          bottomArr[i] = colorCode[5];
                                                           }
                                                             }
+															
+
+ // rotate matrix x,y,z with edges anti and clock wise direction
+function rotationMatrixFunction(axisVar, directionRot, numStepRot, cellLocation) {
+	//rotation around X-axis
+  if ( axisVar == "x" ) {
+	// rotate matrix around X axis for selected cell in the middle not edge
+	matrixXaxisRotationFunction(directionRot, cellLocation, numStepRot, matrixDimension,  rightsideArr, bottomArr, leftsideArr, topArr);
+   // rotate front matrix edges 
+   if (cellLocation == 1) {
+	if (directionRot == "cw")  
+    clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, frontArr, 2);	
+    else 
+	antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, frontArr, 2);	
+	}	
+   if (cellLocation == matrixDimension) {
+    if (directionRot == "cw") 
+	antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, backArr, 0);
+    else 
+	clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, backArr, 0);
+	} 
+	}
+
+  // rotation around Y-axis
+ if ( axisVar == "y" ) { 
+    //rotate matrix around Y axis for selected cell in the middle not edge
+    matrixYaxisRotationFunction(directionRot, cellLocation, numStepRot, matrixDimension, topArr, frontArr, bottomArr, backArr);	
+	// rotate rightside matrix edges 
+   if (cellLocation == 1) {	
+    if (directionRot == "cw")  
+	antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, rightsideArr, 1);
+    else 
+	clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, rightsideArr, 1);	
+	}
+   // rotate leftside matrix edges 
+   if (cellLocation == matrixDimension) {
+	if (directionRot == "cw")  
+	clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, leftsideArr, 3);
+    else 
+    antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, leftsideArr, 3);
+	} 
+	}
+ 
+   //rotation around Z-axis
+ if ( axisVar == "z" ) {
+   //rotate matrix around Z axis for selected cell in the middle not edge
+   matrixZaxisRotationFunction(directionRot, cellLocation, numStepRot, matrixDimension, backArr, rightsideArr, frontArr, leftsideArr);
+   //rotate top matrix edges 
+   if (cellLocation == 1) {
+	if (directionRot == "cw")  
+	clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, topArr, 4);
+    else 
+	antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, topArr, 4);
+	} 
+   if (cellLocation == matrixDimension) {
+    if (directionRot == "cw")  	   
+	antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, bottomArr, 5);
+    else
+    clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, bottomArr, 5);
+	}
+    }
+
+                                                                              }
  
  //rotate matrix around X-axis for cell in middle not edge give color
  // k repsent step rotation in middle in clock wise dircetion
@@ -359,7 +422,36 @@ function getRndRotDirection(){
 	                  }
 	 return temp;
                                  }
-
+								 
+// create the table cells
+function createDataTableFunction(arr1, arr2, arr3, arr4) {	  
+ //Define variables and array
+  var i, text;
+  
+  //removes the child elements of the selected element(s).
+   $("#randData").empty(); 
+   
+   text = "<tr>";
+   text += "<th>Sequence</th>";
+   text += "<th>Axis</th>";
+   text += "<th>ClockWise/AntiClockWise</th>";
+   text += "<th>Step rotation</th>";
+   text += "<th>Cell Location</th>";
+   text += "</tr>";
+   $("#randData").append(text); 
+   
+   for (i=0; i < arr1.length; i++) {
+   text = "<tr>";
+   text += "<td>"+(i+1)+"</td>" ;
+   text += "<td>"+arr1[i]+"</td>" ;
+   text += "<td>"+arr2[i]+"</td>" ;
+   text += "<td>"+arr3[i]+"</td>" ;
+   text += "<td>"+arr4[i]+"</td>" ;
+   text += "</tr>";
+     $("#randData").append(text); 
+   }       
+  
+}
 							 
 
 								 
