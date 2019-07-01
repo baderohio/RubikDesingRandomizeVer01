@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : June 27, 2019
+* Date       : July 1, 2019
 * File       : mainFunctionScript.js
 * Purpose    : Create GUI and rotation function
 */

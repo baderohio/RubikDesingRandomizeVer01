@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : June 27, 2019
+* Date       : July 1, 2019
 * File       : rubicstyle.css
 * Purpose    : external file that contain style
 */
@@ -16,6 +16,29 @@
     /*table, td {border: 1px solid #ffffff;}*/
 	table, td {border-style: none;}
     td {padding: 20px;}	
+	
+	/********************************/
+	#randData {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+     }
+
+    #randData td, #randData th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
+    #randData tr:nth-child(even){background-color: #f2f2f2;}
+    #randData tr:hover {background-color: #ddd;}
+    #randData th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /*background-color: #4CAF50;*/
+	background-color: #23B9B7;
+    color: white;
+    }
+	/********************************/
 	/***********************************************/
 	/*button*/
 	button {
@@ -73,7 +96,46 @@ p  {
   font-family: courier;
   font-size: 150%;
 }
+/*********************************************************/
 
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+ 
+  /*bottom: 0;*/
+  top: 0;
+  width: 95%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.navbar a.active {
+  /*background-color: #4CAF50;*/ 
+  background-color: #23B9B7;
+  color: white;
+}
+
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+}
+
+/*********************************************************/
 	
 
 	
