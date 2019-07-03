@@ -22,12 +22,12 @@ function dataVaidateFunction(){
    // Get the value of the input field with id="numb"
    matrixDimension = parseInt(document.getElementById("numb").value); 
    document.getElementById("demo").innerHTML = checkInputFunction(matrixDimension);	  
-   if(checkInputFunction(matrixDimension)=="Input OK")
+   if(checkInputFunction(matrixDimension,10)=="Input OK")
 	   $("#btnRun").attr("disabled", false);
       else {
 	   $("#btnRun").attr("disabled", true);
 	   
-	   window.alert(checkInputFunction(matrixDimension));}
+	   window.alert(checkInputFunction(matrixDimension,10));}
                                 }
 								
   // Create GUI for face
@@ -64,9 +64,12 @@ function rotationFunction() {
 	 // declare variable
      var numSequence, axisVar, directionRot, numStepRot, cellLocation;
 	 var arr1 =[], arr2 =[], arr3 =[], arr4 =[];
-     // read input
+   
+	 // read input
 	 numSequence = parseInt($( "#numScramble" ).val());    // number of sequence scramble
- 
+	    if(checkInputFunction(numSequence)!="Input OK")  
+	   window.alert(checkInputFunction(numSequence,10000));
+     
      console.log("start");
      for(i=0; i<numSequence; i++) {
        //Randomize variables
@@ -89,6 +92,7 @@ function rotationFunction() {
 	  // give cells faces color
 	     cellColorXYZaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, rightsideArr, frontArr, leftsideArr, topArr, bottomArr, colorFace);	
 	  // create table for random data
+	  if(checkInputFunction(numSequence)=="Input OK") 
 	    createDataTableFunction(arr1, arr2, arr3, arr4);
                                 }                                
 

@@ -18,14 +18,14 @@
     </head>
 
    <body>
-   <div class="navbar">
-  <a href="Home.html">Play</a>
-  <a href="" class="active">Scramble</a>
-  <a href="#contact">Contact</a>
-</div>
+    <!--Navigation Bar-->
+    <div class="navbar">
+     <a href="Home.html">Play</a>
+     <a href="" class="active">Scramble</a>
+    </div>
     <br><br>
     <div class ="rub">
-     <h1>Rotation Rubik Faces</h2>
+     <h1>Scramble Rubik Cube</h2>
      <!--Enter data--><!-- -->
      <p>Enter matrix dimension that is positive integer:</p>
      <table>
@@ -44,7 +44,7 @@
       </tr>
      </table>
     </div>
-    
+	
 	<!-- Create rubic orthographic -->
     <div class="grid-container">
      <div class="grid-item"></div>
@@ -73,15 +73,23 @@
 	 	 
      <table>
       <tr>
-       <td><p>Push button to scramble faces</p></td>
-       <td><input id="numScramble" value="10"></td>
-       <td><button  type="button" onclick="scrambleFunction()">scramble</button></td>
+       <td>
+	    <p>Push button to scramble faces</p>
+	   </td>
+       <td>
+	     <input id="numScramble" placeholder="Integer 1-9000"  value="" required>
+		</td>
+       <td>
+	     <button  type="button" onclick="scrambleFunction()">scramble</button>
+		</td>
       </tr>
      </table>  
-    <table id="randData"></table>	 
-  
+	 
+    <!--table display the sequence of random movement for rubik cube-->
+	<table id="randData"></table>	 
    </div>
-
+   <br><br>
+   <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
 <!--Call javaScript code for create rubic orthographic -->
 <script src="mainFunctionScript.js"></script>
 <script src="branchFunctionScript.js"></script>

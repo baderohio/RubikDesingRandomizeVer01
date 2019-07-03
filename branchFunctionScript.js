@@ -6,11 +6,11 @@
 */
 
 //Validate input data
-function checkInputFunction(matrixDimension){
+function checkInputFunction(matrixDimension,max){
 	//declare variables
 	var text;
 	  // If matrixDimension is Not a Number or less than one or greater than 100
-  if (isNaN(matrixDimension) || matrixDimension < 1 || matrixDimension > 100) 
+  if (isNaN(matrixDimension) || matrixDimension < 1 || matrixDimension > max) 
       {
     text = "Input not valid";
        } else {
@@ -27,17 +27,17 @@ function createFaceFunction(matrixDimension, cL, fL) {
   
   for (k=0; k< 6; k++) {
   // put class and id arribute for each faces cell
-  for (j = 0; j < matrixDimension; j++) {
-   text = "<tr>";
-   for (i = 0; i < matrixDimension; i++) {
-	 text += "<td class="+"back"+" id="+cL[k]+((j+1)*10+(i+1))+">"+" "+"</td>";
-	 }
-     text  += "</tr>";
-     arr[j] = text;}
+   for (j = 0; j < matrixDimension; j++) {
+    text = "<tr>";
+    for (i = 0; i < matrixDimension; i++) {
+	  text += "<td class="+"back"+" id="+cL[k]+((j+1)*10+(i+1))+">"+" "+"</td>";
+	  }
+      text  += "</tr>";
+      arr[j] = text;}
     
-	// create cells in face (table) choose by id attributes
-	document.getElementById(fL[k]).innerHTML = arr[0];
-    for (j = 1; j < matrixDimension; j++){
+	 // create cells in face (table) choose by id attributes
+	 document.getElementById(fL[k]).innerHTML = arr[0];
+     for (j = 1; j < matrixDimension; j++){
      $("#"+fL[k]).append(arr[j]);        }
                         }	
 }
@@ -54,7 +54,6 @@ function chooseCellLocationFunction(matrixDimension) {
 	 }        
     $("#cellRotation").append(text); 
 }
-
 
 //color each cells separatelly
 function colorCellsFunction(matrixDimension, cL, colorFace) {	
@@ -88,7 +87,6 @@ function initializeMatrixFunction(backArr, rightsideArr, frontArr, leftsideArr, 
                                                           }
                                                             }
 															
-
  // rotate matrix x,y,z with edges anti and clock wise direction
 function rotationMatrixFunction(axisVar, directionRot, numStepRot, cellLocation) {
 	//rotation around X-axis
@@ -169,8 +167,8 @@ function matrixXaxisRotationFunction(directionRot, cellLocation, numStepRot, mat
 	bottomArr[ii] = leftsideArr[matrixDimension*(matrixDimension-1)-j*matrixDimension+(cellLocation-1)];
 	leftsideArr[matrixDimension*(matrixDimension-1)-j*matrixDimension+(cellLocation-1)] = topArr[squDimension-ii];
 	topArr[squDimension-ii] = temp;
-	
-	} else {
+	}
+	else {
 		
 	temp = leftsideArr[(cellLocation-1)+j*matrixDimension];
 	leftsideArr[(cellLocation-1)+j*matrixDimension] = bottomArr[cellLocation*matrixDimension-1-j];
@@ -180,7 +178,6 @@ function matrixXaxisRotationFunction(directionRot, cellLocation, numStepRot, mat
 	
 	}
 	j++;
-	 
                                                                      }
                              }						             
 			   }
@@ -192,22 +189,21 @@ function matrixXaxisRotationFunction(directionRot, cellLocation, numStepRot, mat
    // define variables
    var i, k, temp;
    //console.log(topArr);
-  for(k=0; k < numStepRot; k++){
-	  	  
+  for(k=0; k < numStepRot; k++){  	  
    for (i =(cellLocation-1); i< (matrixDimension*matrixDimension); i=i+matrixDimension) {	 
 	 if (directionRot == "cw") {	
 	 temp=topArr[i];
 	 topArr[i] = frontArr[i];
 	 frontArr[i] = bottomArr[i];
 	 bottomArr[i] = backArr[matrixDimension*matrixDimension-1-i];
-	 backArr[matrixDimension*matrixDimension-1-i] = temp; } else {
-	 ///////////////////////
+	 backArr[matrixDimension*matrixDimension-1-i] = temp; } 
+	 else {
 	 temp = bottomArr[i];
 	 bottomArr[i] = frontArr[i];
 	 frontArr[i] = topArr[i];
 	 topArr[i] = backArr[matrixDimension*matrixDimension-1-i];
 	 backArr[matrixDimension*matrixDimension-1-i] = temp; 
-	 ///////////////////////
+	 
 	 }	 
                                                                      }
                              }						 
@@ -226,14 +222,14 @@ function matrixZaxisRotationFunction(directionRot, cellLocation, numStepRot, mat
 	 backArr[i] = rightsideArr[i];
 	 rightsideArr[i] = frontArr[i];
 	 frontArr[i] = leftsideArr[i];
-	 leftsideArr[i] = temp;	 } else {
-	 /////////////////
+	 leftsideArr[i] = temp;	 } 
+	 else {
 	 temp = leftsideArr[i];
 	 leftsideArr[i]= frontArr[i];
 	 frontArr[i] = rightsideArr[i];
 	 rightsideArr[i] = backArr[i];
 	 backArr[i] = temp; }
-	 /////////////////
+	 
                                                                                                           }
                              }
 			   }
@@ -357,8 +353,7 @@ function antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, te
 		window.alert("No or wrong number have been choosen for chooseMatrix");
 }
 
-
-
+//rotation around x,y,z axis
 function cellColorXYZaxisRotationFunction(cL, cellLocation, matrixDimension, backArr, rightsideArr, frontArr, leftsideArr, topArr, bottomArr, colorFace) {
   //Define variables
   // k represent the face
@@ -384,9 +379,11 @@ function cellColorXYZaxisRotationFunction(cL, cellLocation, matrixDimension, bac
                          }
 }
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////randomize cell////////////////////////////////////////////////////////////////////
+//////////////////////function for Scramble cell////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // returns integer a random number between min and max
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;

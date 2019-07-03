@@ -5,8 +5,9 @@
 * Purpose    : external file that contain style
 */
 
- html {background-color: #23B9B7;}
-  body, .rub {margin: 0px;  width: 95%; margin: auto;} 
+  html {background-color: #23B9B7;}
+  body, .rub {width: 95%; margin: auto;}
+  
  .grid-container {
    display: grid;
    background-color: #89905B;
@@ -97,7 +98,7 @@ p  {
   font-size: 150%;
 }
 /*********************************************************/
-
+/*navigation bar style*/
 
 .navbar {
   overflow: hidden;
@@ -137,6 +138,7 @@ p  {
 
 /*********************************************************/
 	
-
+ #footer{front-size: 70%; text-align: center; font-style: italic; padding 10px; 
+	background-color:#eeeef0; clear: both }
 	
  
