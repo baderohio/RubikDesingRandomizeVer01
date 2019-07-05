@@ -12,6 +12,7 @@
  var colorFace = ["Green", "Tan", "RoyalBlue", "DarkRed", "Yellow", "White"]; // faces color
  //var colorFace = ["#08960A", "#CD9834", "#3364FB", "#BC0B00", "#FFFB03", "#FFFDFF"];
  var colorCode=["0", "1", "2", "3", "4", "5"]; // code number for color faces
+ //var colorCode=["1", "7", "13", "21", "31", "43"]; // code number for color faces
  var backArr =[], rightsideArr =[], frontArr =[], leftsideArr =[], topArr =[], bottomArr =[], tempArr =[]; 
  
  //initialization disable Display button   
@@ -94,5 +95,30 @@ function rotationFunction() {
 	  // create table for random data
 	  if(checkInputFunction(numSequence)=="Input OK") 
 	    createDataTableFunction(arr1, arr2, arr3, arr4);
+	
+	////////////////////////  
+	  //fL = ["back", "rightside","front","leftside", "top", "bottom"]; // table id
+      //colorCode=["0", "1", "2", "3", "4", "5"]; // code number for color faces  
+	  var arrVal = [],  arrSum = [];
+	  for (var i=0;i< 6; i++) {
+	  arrVal[i] = colorCode[i]* matrixDimension*matrixDimension;
+	  arrSum[i] = 0;
+	  }
+      console.log(arrVal);
+	 
+	  for (var i=0;i<matrixDimension*matrixDimension;i++) {
+		  arrSum[0] = arrSum[0]+parseInt(backArr[i]);
+	      arrSum[1] = arrSum[1]+parseInt(rightsideArr[i]);
+		  arrSum[2] = arrSum[2]+parseInt(frontArr[i]);
+		  arrSum[3] = arrSum[3]+parseInt(leftsideArr[i]);
+		  arrSum[4] = arrSum[4]+parseInt(topArr[i]);
+	      arrSum[5] = arrSum[5]+parseInt(bottomArr[i]);
+		  }
+		  
+		  
+		   console.log(arrSum);
+		  
+	//fitnessFunction = 
+	////////////////////////
                                 }                                
 
