@@ -239,46 +239,24 @@ function matrixZaxisRotationFunction(directionRot, cellLocation, numStepRot, mat
 // top martix when cell location = 1
 function clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, tempArr, chooseMatrix) { 
    
-	// define variables
-    var i, j, jj, jj1, jj2, jj3, ii, ij, k;	
+   	// define variables
+    var i, j, k, index;	
 	var arr = [];
 	for(k=0; k < numStepRot; k++){	
 	// create temperory matrix to save data for swaping edges
 	for (i = 0; i < matrixDimension*matrixDimension; i++) 
 	    arr[i] = tempArr[i];
-		
-	jj  = 0;
-	jj1 = 0;
-	jj2 = 0;
-	jj3 = 0;
 	
-	for (i = 0; i < matrixDimension; i++) {
-		for ( j = 0; j < matrixDimension ; j++ ) {	
-		
-			if (i == 0) {
-               ij = matrixDimension*(matrixDimension-1)+j;	
-			   tempArr[jj] = arr[ij];
-			   jj = jj + matrixDimension;}
-			
-			
-			if (j == (matrixDimension-1)){
-			   ii = matrixDimension*(matrixDimension-1)+i;	
-			   ii1 = matrixDimension*matrixDimension-1-jj1;
-			   tempArr[ii] = arr[ii1];
-               jj1 = jj1 + matrixDimension;}
-			   
-			if (i == (matrixDimension-1)){
-			   tempArr[matrixDimension*matrixDimension-1-jj2] = arr[matrixDimension-1-j];
-			   jj2 = jj2 + matrixDimension;}
-			
-			if(j == 0) {
-			   tempArr[(matrixDimension-1)-i] = arr[jj3];
-			   jj3 = jj3 + matrixDimension;}
-			
+	index=0;	
+	for ( j = 0; j < matrixDimension ; j++ ) {		
+		for (i = 0; i < matrixDimension; i++) {
+		 
+		  tempArr[index] = arr[matrixDimension*(matrixDimension-1)+j-i*matrixDimension];	
+		  index++;
+		}
 		}
 	}
-			
-	}
+   
 	
 	if (chooseMatrix == 2)
 		for (i = 0; i < matrixDimension*matrixDimension; i++) frontArr[i] = tempArr[i];
@@ -294,48 +272,32 @@ function clockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, tempAr
 		for (i = 0; i < matrixDimension*matrixDimension; i++) backArr[i] = tempArr[i];	
 	else
 		window.alert("No or wrong number have been choosen for chooseMatrix");
+
 }
 
 // Anti ClockWise 
 // rotation of back matrix when cell location = matrix dimension, rightside matrix when cell location = 1
 // bottom martix when cell location = matrix dimension
 function antiClockWiseMatrixaxisRotationFunction(numStepRot, matrixDimension, tempArr, chooseMatrix) { 
+	
 	// define variables
-      var i, j, k, jj, jj1, jj2, jj3;	
+    var i, j, k, index;	
 	var arr = [];
 	for(k=0; k < numStepRot; k++){	
 	// create temperory matrix to save data for swaping edges
-	for (i = 0; i < matrixDimension*matrixDimension; i++) { 
-	    arr[i] = tempArr[i];}
-		
-	jj  = 0; 
-	jj1 = 0; 
-	jj2 = 0; 
-	jj3 = 0; 
+	for (i = 0; i < matrixDimension*matrixDimension; i++) 
+	    arr[i] = tempArr[i];
 	
-	for (i = 0; i < matrixDimension; i++) {
-		for ( j = 0; j < matrixDimension ; j++ ) {	
+	index=0;	
+	for ( j = 0; j < matrixDimension ; j++ ) {		
+		for (i = 0; i < matrixDimension; i++) {
 		
-			if (i == 0) {
-			   tempArr[matrixDimension*matrixDimension-1-j] = arr[matrixDimension*(matrixDimension-1)-jj];
-			   jj = jj + matrixDimension;}
-			
-			if (j == (matrixDimension-1)){
-			   tempArr[matrixDimension-1+jj1] = arr[matrixDimension*matrixDimension-1-i];
-               jj1 = jj1 + matrixDimension;}
-			   
-			if (i == (matrixDimension-1)){
-			   tempArr[j] = arr[matrixDimension-1+jj2];
-			   jj2 = jj2 + matrixDimension;}
-			
-			if(j == 0) {
-				tempArr[matrixDimension*(matrixDimension-1)-jj3] = arr[i];
-				jj3 = jj3 + matrixDimension;}
-			
+		tempArr[index] = arr[matrixDimension-1-j+i*matrixDimension];	
+		index++;
+		}
 		}
 	}
-			
-	}
+	
 	
 	if (chooseMatrix == 0)
 		for (i = 0; i < matrixDimension*matrixDimension; i++) backArr[i] = tempArr[i];
