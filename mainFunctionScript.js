@@ -22,9 +22,13 @@
 function dataVaidateFunction(){
    // Get the value of the input field with id="numb"
    matrixDimension = parseInt(document.getElementById("numb").value); 
-   document.getElementById("demo").innerHTML = checkInputFunction(matrixDimension);	  
+   //document.getElementById("demo").innerHTML = checkInputFunction(matrixDimension);	  
    if(checkInputFunction(matrixDimension,10)=="Input OK")
-	   $("#btnRun").attr("disabled", false);
+   {
+   $("#btnRun").attr("disabled", false);
+   guiFunction();
+   initializeFunction();
+   }
       else {
 	   $("#btnRun").attr("disabled", true);
 	   
@@ -45,7 +49,8 @@ function guiFunction() {
 function initializeFunction() {
    // intialize matrix with code number represent color		
     initializeMatrixFunction(backArr, rightsideArr, frontArr, leftsideArr, topArr, bottomArr, matrixDimension, colorCode)
-	document.getElementById("demo1").innerHTML = "Successful matrix initilization";
+	//document.getElementById("demo1").innerHTML = "Successful matrix initilization";
+	 guiFunction();
                                }
 
   // rotation around Axis X, Y, Z
