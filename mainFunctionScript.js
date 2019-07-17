@@ -51,6 +51,9 @@ function initializeFunction() {
     initializeMatrixFunction(backArr, rightsideArr, frontArr, leftsideArr, topArr, bottomArr, matrixDimension, colorCode)
 	//document.getElementById("demo1").innerHTML = "Successful matrix initilization";
 	 guiFunction();
+	
+	//removes the child elements of the selected element(s).
+   $("#randData").empty();
                                }
 
   // rotation around Axis X, Y, Z

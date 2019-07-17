@@ -5,21 +5,61 @@
 * Purpose    : external file that contain style
 */
 
-  html {background-color: #23B9B7;}
-  body, .rub {width: 95%; margin: auto;}
+  /*html {background-color: #23B9B7;}*/
+ 
+  body {width: 100%; 
+        margin: auto;
+		background-color: #BBBDB4;}
+		
+ #main {margin: 1em;}
+  h1 {
+       color: black;
+       font-family: verdana;
+       font-size: 200%;}
+  p  {
+       color: black;
+       font-family: courier;
+       font-size: 150%;}	
+  
+	   /***********************************/
+	   
+	   @media screen and (max-width: 320px) {
+	     h1 { font-size: 20px;}		   
+         p { font-size: 12px;}
+         #typeRotation { font-size: 10px; }
+         #main {margin: 0;}
+		
+		 }
+	   /***********************************/
+  /*body, .rub {width: 95%; margin: auto;}*/
+  .rub ul { 
+        list-style-type: none;
+		/*float: left;*/
+		}
+  .rub li {
+		float: left;
+		
+		}
+  /*.choosingVariable {
+	  float: none;
+  }*/
+		
   
  .grid-container {
+   clear: both;
    display: grid;
    background-color: #89905B;
    grid-template-columns: auto auto auto auto;
-                   }
-    body {background-color: #BBBDB4;}
+                }
+   
     /*table, td {border: 1px solid #ffffff;}*/
 	table, td {border-style: none;}
-    td {padding: 20px;}	
+    /*td {padding: 20px;}*/	
+	td {padding: 1em;}	
 	
 	/********************************/
 	#randData {
+    display: block;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -27,14 +67,15 @@
 
     #randData td, #randData th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 8px auto 8px auto;
+	text-align: center;
     }
     #randData tr:nth-child(even){background-color: #f2f2f2;}
     #randData tr:hover {background-color: #ddd;}
     #randData th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    /*text-align: left;*/
     /*background-color: #4CAF50;*/
 	background-color: #23B9B7;
     color: white;
@@ -44,8 +85,11 @@
 	/*button*/
 	button {
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 15px;
+  /*padding: 10px 20px;*/
+  padding: 10px 30px;
+  margin: 1em;
+  width: 10em;
+  font-size: 1em;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -55,7 +99,9 @@
   background-color: #333333;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999; }
+  /*box-shadow: 0 9px #999;*/ 
+  }
+
   button:hover {
 	  /*background-color: #3e8e41*/
 	  background-color: #555555;
@@ -63,7 +109,6 @@
   button:active {
   /*background-color: #3e8e41;*/
   background-color: #555555;
-  box-shadow: 0 5px #666;
   transform: translateY(4px);}
   /**************************************************/
    /*input*/
@@ -77,26 +122,18 @@
   box-sizing: border-box;}
 
   input {
-  width: 50%;
+  width: 11%;
   /*background-color: #4CAF50;*/
   background-color: #EEEEEE;
   color: black;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 8px 10px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;}
+  cursor: pointer;
+  font-size: .7em;}
   
-  h1 {
-  color: black;
-  font-family: verdana;
-  font-size: 200%;
-}
-p  {
-  color: black;
-  font-family: courier;
-  font-size: 150%;
-}
+
 /*********************************************************/
 /*navigation bar style*/
 
@@ -107,7 +144,8 @@ p  {
  
   /*bottom: 0;*/
   top: 0;
-  width: 95%;
+  /*width: 95%;*/
+  width: 100%;
 }
 
 .navbar a {
@@ -130,15 +168,28 @@ p  {
   background-color: #23B9B7;
   color: white;
 }
-
+/*
 .main {
   padding: 16px;
   margin-bottom: 30px;
 }
-
+*/
 /*********************************************************/
 	
- #footer{front-size: 70%; text-align: center; font-style: italic; padding 10px; 
-	background-color:#eeeef0; clear: both }
-	
+ #footer{
+	 front-size: 70%; 
+	 text-align: center; 
+	 font-style: italic; 
+	 padding 10px; 
+	 color: white;
+	 background-color: #333;
+	 /*background-color:#eeeef0; */
+	 clear: both;
+	 position: fixed;
+	 bottom: 0px;
+	 /*width: 95%;*/
+	 width: 100%;
+	 margin: auto;
+	 }
+
  

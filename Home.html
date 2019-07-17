@@ -9,7 +9,13 @@
 
   <!DOCTYPE html>
    <html>
+   
     <head>
+     <meta charset="UTF-8">
+     <meta name="description" content="Free Rubik Play">
+     <meta name="keywords" content="HTML,CSS,JavaScript">
+     <meta name="author" content="Bader Juma">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- JQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
 	  </script>
@@ -18,30 +24,28 @@
     </head>
 
    <body>
-   <!--Navigation Bar-->
+    <!--Navigation Bar-->
     <div class="navbar">
      <a href="" class="active">Play</a>
      <a href="Scramble.html">Scramble</a>
     </div>
-    <br><br>
-    <div class ="rub">
-     <h1>Play With Rubik Cube</h2>
-     <!--Enter data--><!-- -->
-     <p>Enter matrix dimension that is positive integer:</p>
-     <table>
-      <tr>
-       <td><input type="text" placeholder="Enter number between 1-10" required id="numb"></td>
-       <td><button class="red"  type="button" onclick="dataVaidateFunction()">Enter</button></td>
-	    <td><button  type="button" onclick="rotationFunction()">Rotate</button></td>
-       <td><button  type="button" onclick="initializeFunction()">Reset</button></td>
-       
-      </tr>
-
-     </table>
-    </div>
-    
+   <div id="main">
+     <br><br>
+     <h1>Play With Rubik Cube</h1>
+	 <p>Enter matrix dimension that is positive integer:</p>
+	 <!--Enter data--><!-- -->
+	 <input type="text" placeholder="(1-10)" required id="numb">
+	 <div class ="rub">
+	 <ul>
+	 <li><button class="red"  type="button" onclick="dataVaidateFunction()">Enter</button></li>
+	 <li><button  type="button" onclick="rotationFunction()">Rotate</button></li>
+	 <li><button  type="button" onclick="initializeFunction()">Reset</button></li>
+	 </ul>
+     </div>
+	 
 	<!-- Create rubic orthographic -->
     <div class="grid-container">
+	 
      <div class="grid-item"></div>
      <div class="grid-item"></div>  
      <div class="grid-item"><table id="top"></table></div>    
@@ -56,7 +60,7 @@
      <div class="grid-item"></div> 
     </div>
     
-	<div class ="rub">
+	<div class="choosingVariable">
 	 
      <!-- chooses rotation of axis x,y, x -->
       <table>
@@ -77,8 +81,8 @@
         </td>
         <td>
 	     <select id="typeRotation">
-          <option value="cw">Clockwise</option>
-          <option value="anticw">AntiClockwise</option>
+          <option value="cw">CW</option>
+          <option value="anticw">AntiCW</option>
          </select>
         </td>
       </tr>
@@ -107,6 +111,9 @@
         <!--<td><button  type="button" onclick="rotationFunction()">Rotate</button></td>-->
        </tr> 
      </table>
+	   
+   </div>
+   <br><br>
    </div>
    <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
 <!--Call javaScript code for create rubic orthographic -->

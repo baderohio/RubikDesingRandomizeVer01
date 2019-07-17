@@ -10,6 +10,11 @@
   <!DOCTYPE html>
    <html>
     <head>
+	 <meta charset="UTF-8">
+     <meta name="description" content="Free Rubik Play">
+     <meta name="keywords" content="HTML,CSS,JavaScript">
+     <meta name="author" content="Bader Juma">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- JQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
 	  </script>
@@ -24,31 +29,19 @@
      <a href="Home.html">Play</a>
      <a href="" class="active">Scramble</a>
     </div>
+	<div id="main">
     <br><br>
-    <div class ="rub">
-     <h1>Scramble Rubik Cube</h2>
-     <!--Enter data--><!-- -->
+     <h1>Scramble Rubik Cube</h1>
      <p>Enter matrix dimension that is positive integer:</p>
-     <table>
-      <tr>
-       <td>
-	   <input type="text" placeholder="Enter number between 1-10" required id="numb">
-	   <!--<input id="numb" value="3">-->
-	   </td>
-       <td><button class="red"  type="button" onclick="dataVaidateFunction()">Enter</button></td>
-	   <td><button  type="button" onclick="initializeFunction()">Reset</button></td>
-       <!--<td><p id = "demo"></p></td>-->
-      </tr>
-	  <!--
-      <tr>
-       <td><p>Display orthographic faces<br> for Rubik object</p></td>
-       <td><button  id="btnRun" type="button" onclick="guiFunction()">Display</button></td>
-       <td></td>
-      </tr>
-	  -->
-	  
-     </table>
-    </div>
+     <!--Enter data--><!-- -->
+	 <input type="text" placeholder="(1-10)" required id="numb">   
+	 <div class ="rub">
+	 <ul>
+	 <li><button class="red"  type="button" onclick="dataVaidateFunction()">Enter</button></li>	 
+	 <li><button  type="button" onclick="initializeFunction()">Reset</button></li>
+	 </ul> 
+     </div>
+	  <!--test code-->
 	
 	<!-- Create rubic orthographic -->
     <div class="grid-container">
@@ -66,27 +59,16 @@
      <div class="grid-item"></div> 
     </div>
     
-	<div class ="rub">
-
-	 	 
-     <table>
-      <tr>
-       <td>
-	    <p>Push button to scramble faces</p>
-	   </td>
-       <td>
-	     <input id="numScramble" placeholder="Integer 1-9000"  value="" required>
-		</td>
-       <td>
-	     <button  type="button" onclick="scrambleFunction()">scramble</button>
-		</td>
-      </tr>
-     </table>  
-	 
+	 	
+	<p>Push button to scramble faces</p>
+	<input id="numScramble" placeholder="Integer(1-9000)"  value="" required>
+	<button  type="button" onclick="scrambleFunction()">scramble</button>
     <!--table display the sequence of random movement for rubik cube-->
 	<table id="randData"></table>	 
-   </div>
+    
+   
    <br><br>
+   </div>
    <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
 <!--Call javaScript code for create rubic orthographic -->
 <script src="mainFunctionScript.js"></script>
