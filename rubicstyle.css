@@ -21,16 +21,7 @@
        font-family: courier;
        font-size: 150%;}	
   
-	   /***********************************/
-	   
-	   @media screen and (max-width: 320px) {
-	     h1 { font-size: 20px;}		   
-         p { font-size: 12px;}
-         #typeRotation { font-size: 10px; }
-         #main {margin: 0;}
-		
-		 }
-	   /***********************************/
+
   /*body, .rub {width: 95%; margin: auto;}*/
   .rub ul { 
         list-style-type: none;
@@ -50,6 +41,7 @@
    display: grid;
    background-color: #89905B;
    grid-template-columns: auto auto auto auto;
+   
                 }
    
     /*table, td {border: 1px solid #ffffff;}*/
@@ -59,7 +51,7 @@
 	
 	/********************************/
 	#randData {
-    display: block;
+    /*display: block;*/
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -191,5 +183,22 @@
 	 width: 100%;
 	 margin: auto;
 	 }
+	 
+	 	   /***********************************/
+	   
+	   @media screen and (max-width: 320px) {
+	     h1 { font-size: 20px;}		   
+         p { font-size: 12px;}
+         #typeRotation { font-size: 10px; }
+         #main {margin: 0;}
+		#randData {display: block;}
+		td {padding: .3em;}
+		#randData td, #randData th {
+                        /*border: 1px solid #ddd;
+                        padding: 1px;
+	                    text-align: center;*/
+						font-size: 10px;}
+		 }
+	   /***********************************/
 
  
