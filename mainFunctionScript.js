@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : July 1, 2019
+* Date       : July 18, 2019
 * File       : mainFunctionScript.js
 * Purpose    : Create GUI and rotation function
 */
@@ -16,21 +16,43 @@
  var backArr =[], rightsideArr =[], frontArr =[], leftsideArr =[], topArr =[], bottomArr =[], tempArr =[]; 
  
  //initialization disable Display button   
- $("#btnRun").attr("disabled", true);
-
+ //$("#btnRun").attr("disabled", true);
+ $("#btnRotate").hide();
+ $("#btnReset").hide();
+ $("#numScramble").hide();
+ $("#btnScramble").hide();
+ $("#pScramble").hide();
  // validate input data
 function dataVaidateFunction(){
+	//define variable
+	var i;
+	
    // Get the value of the input field with id="numb"
-   matrixDimension = parseInt(document.getElementById("numb").value); 
+   //matrixDimension = parseInt(document.getElementById("numb").value); 
+   matrixDimension = parseInt($("#numb").val()); 
    //document.getElementById("demo").innerHTML = checkInputFunction(matrixDimension);	  
    if(checkInputFunction(matrixDimension,10)=="Input OK")
    {
-   $("#btnRun").attr("disabled", false);
+   
+   $("#btnRotate").show();
+   $("#pScramble").show();
+   $("#numScramble").show();
+   $("#btnScramble").show();
    guiFunction();
    initializeFunction();
    }
       else {
-	   $("#btnRun").attr("disabled", true);
+	   
+	   $("#btnRotate").hide();
+	   $("#btnReset").hide();
+	   $("#pScramble").hide();
+	   $("#numScramble").hide();
+       $("#btnScramble").hide();
+	    //removes the child elements of the selected element(s).
+        $("#randData").empty(); 
+	   //removes the child elements of the selected element(s).
+	   for(i=0; i< fL.length; i++) 
+		   $("#"+fL[i]).empty(); 
 	   
 	   window.alert(checkInputFunction(matrixDimension,10));}
                                 }
@@ -58,6 +80,9 @@ function initializeFunction() {
 
   // rotation around Axis X, Y, Z
 function rotationFunction() { 
+  //show reset button
+  $("#btnReset").show();
+  
  //Read data
  var axisVar = $( "#axisRotation" ).val();       //choose axis
  var directionRot = $( "#typeRotation" ).val(); // direction of rotation ClockWise always in this code
@@ -70,12 +95,22 @@ function rotationFunction() {
                              }
 
  function scrambleFunction() {
+	 // show reset button
+	 $("#btnReset").show();
+	 
 	 // declare variable
-     var numSequence, axisVar, directionRot, numStepRot, cellLocation;
+     var i, numSequence, axisVar, directionRot, numStepRot, cellLocation;
 	 var arr1 =[], arr2 =[], arr3 =[], arr4 =[];
    
 	 // read input
+	  if (typeof $( "#numScramble" ).val() === "undefined")
+		  numSequence = getRndInteger(1,1000); 
+	  else
 	 numSequence = parseInt($( "#numScramble" ).val());    // number of sequence scramble
+	 
+		
+	//console.log(numSequence);
+	
 	    if(checkInputFunction(numSequence)!="Input OK")  
 	   window.alert(checkInputFunction(numSequence,10000));
      
@@ -105,10 +140,12 @@ function rotationFunction() {
 	    createDataTableFunction(arr1, arr2, arr3, arr4);
 	
 	////////////////////////  
+	///!test code for future developing///
+	// this part was test fitness function for future work it can delete from code has no influence on current code
 	  //fL = ["back", "rightside","front","leftside", "top", "bottom"]; // table id
       //colorCode=["0", "1", "2", "3", "4", "5"]; // code number for color faces  
 	  var arrVal = [],  arrSum = [];
-	  for (var i=0;i< 6; i++) {
+	  for (i=0;i< 6; i++) {
 	  arrVal[i] = colorCode[i]* matrixDimension*matrixDimension;
 	  arrSum[i] = 0;
 	  }
@@ -127,6 +164,7 @@ function rotationFunction() {
 		   console.log(arrSum);
 		  
 	//fitnessFunction = 
+	///!test code for future developing///
 	////////////////////////
                                 }                                
 

@@ -1,7 +1,7 @@
 <!--
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : July 1, 2019
+* Date       : July 18, 2019
 * File       : Home.html
 * Purpose    : GUI of Rubik Desing
 */
@@ -28,18 +28,21 @@
     <div class="navbar">
      <a href="" class="active">Play</a>
      <a href="Scramble.html">Scramble</a>
+	 <a href="Help.html">Help</a>
     </div>
    <div id="main">
      <br><br>
      <h1>Play With Rubik Cube</h1>
 	 <p>Enter matrix dimension that is positive integer:</p>
 	 <!--Enter data--><!-- -->
-	 <input type="text" placeholder="(1-10)" required id="numb">
+	 <input type="text" placeholder="Enter(1-10)" required id="numb">
 	 <div class ="rub">
 	 <ul>
-	 <li><button class="red"  type="button" onclick="dataVaidateFunction()">Enter</button></li>
-	 <li><button  type="button" onclick="rotationFunction()">Rotate</button></li>
-	 <li><button  type="button" onclick="initializeFunction()">Reset</button></li>
+	 <li><button type="button" onclick="dataVaidateFunction()" >Enter</button></li>
+	 <li><button type="button" onclick="rotationFunction()" id="btnRotate">Rotate</button></li>
+	 <li><button  type="button" onclick="scrambleFunction()" id="btnScramble">scramble</button></li>
+	 <li><button type="button" onclick="initializeFunction()" id="btnReset">Reset</button></li>
+	 
 	 </ul>
      </div>
 	 

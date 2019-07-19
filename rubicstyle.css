@@ -1,6 +1,6 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : July 1, 2019
+* Date       : July 18, 2019
 * File       : rubicstyle.css
 * Purpose    : external file that contain style
 */
@@ -36,13 +36,14 @@
   }*/
 		
   
- .grid-container {
+  .grid-container {
    clear: both;
    display: grid;
    background-color: #89905B;
    grid-template-columns: auto auto auto auto;
    
                 }
+	.grid-item {margin: 1em;}
    
     /*table, td {border: 1px solid #ffffff;}*/
 	table, td {border-style: none;}
@@ -82,19 +83,19 @@
   margin: 1em;
   width: 10em;
   font-size: 1em;
+  
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
-  /*background-color: #4CAF50;*/
   background-color: #333333;
+
   border: none;
   border-radius: 15px;
   /*box-shadow: 0 9px #999;*/ 
   }
-
-  button:hover {
+   button:hover {
 	  /*background-color: #3e8e41*/
 	  background-color: #555555;
 	  }
