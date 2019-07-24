@@ -19,7 +19,7 @@
   p  {
        color: black;
        font-family: courier;
-       font-size: 150%;}	
+       font-size: 120%;}	
   
 
   /*body, .rub {width: 95%; margin: auto;}*/
@@ -34,7 +34,11 @@
   /*.choosingVariable {
 	  float: none;
   }*/
-		
+   .variables {
+	float:left;
+	margin-left: 20px;  
+    margin-bottom: 20px;	
+   }	
   
   .grid-container {
    clear: both;
@@ -184,6 +188,8 @@
 	 width: 100%;
 	 margin: auto;
 	 }
+	 
+	
 	 
 	 	   /***********************************/
 	   

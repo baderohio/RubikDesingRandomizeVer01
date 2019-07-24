@@ -42,12 +42,49 @@
 	 <li><button type="button" onclick="rotationFunction()" id="btnRotate">Rotate</button></li>
 	 <li><button  type="button" onclick="scrambleFunction()" id="btnScramble">scramble</button></li>
 	 <li><button type="button" onclick="initializeFunction()" id="btnReset">Reset</button></li>
-	 
 	 </ul>
      </div>
+	  <br><br>
+	 
+	 <div class="choosingVariable" style="clear:both;">
+	  <hr>
+        <div class="variables"> 
+		  <p>Choose axis rotation</p>
+          <select id="axisRotation">
+           <option value="x">X</option>
+           <option value="y">Y</option>	
+           <option value="z">Z</option>	
+          </select>
+		</div>
+				
+		 <!-- two direction of rotation Clockwise and Anticlockwise-->
+		<div class="variables">
+         <p>Choose direction of rotation</p>
+	      <select id="typeRotation">
+           <option value="cw">CW</option>
+           <option value="anticw">AntiCW</option>
+          </select>
+		</div>
+		     
+        <!--3 maximum step rotation around one axis that make any 
+        cell reach the required faces -->
+		<div class="variables">
+         <p>Choose step of rotation</p>
+         <select id="stepRotation">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+         </select>
+		</div>
+		
+		<div class="variables">
+		 <p>Choose position of cell to be rotate</p>
+		 <select id="cellRotation"></select>
+        </div>
+		</div>
 	 
 	<!-- Create rubic orthographic -->
-    <div class="grid-container">
+    <div class="grid-container" style="clear:both;">
 	 
      <div class="grid-item"></div>
      <div class="grid-item"></div>  
@@ -62,63 +99,7 @@
      <div class="grid-item"><table id="bottom"></table></div>  
      <div class="grid-item"></div> 
     </div>
-	
 
-    
-	<div class="choosingVariable">
-	 
-     <!-- chooses rotation of axis x,y, x -->
-      <table>
-       <tr>
-        <td><p>Choose axis rotation</p></td>
-         <td>
-         <select id="axisRotation">
-           <option value="x">X</option>
-           <option value="y">Y</option>	
-           <option value="z">Z</option>	
-          </select>
-         </td>
-       </tr>
-       <tr>
-        <td> 
-	    <!-- two direction of rotation Clockwise and Anticlockwise-->
-        <p>Choose direction of rotation</p>
-        </td>
-        <td>
-	     <select id="typeRotation">
-          <option value="cw">CW</option>
-          <option value="anticw">AntiCW</option>
-         </select>
-        </td>
-      </tr>
-      <tr>
-       <td>
-        <!--3 maximum step rotation around one axis that make any 
-        cell reach the required faces -->
-        <p>Choose step of rotation</p>
-       </td>
-       <td>
-        <select id="stepRotation">
-         <option value="1">1</option>
-         <option value="2">2</option>
-         <option value="3">3</option>
-        </select>
-       </td>
-      </tr>
-      <tr>
-        <td>
-		 <p>Choose position of cell to<br> be rotate</p>
-		</td>
-        <td>
-		 <select id="cellRotation">
-		 </select>
-		</td>
-        <!--<td><button  type="button" onclick="rotationFunction()">Rotate</button></td>-->
-       </tr> 
-     </table>
-	   
-   </div>
-   <br><br>
    </div>
    <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
 <!--Call javaScript code for create rubic orthographic -->
